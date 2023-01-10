@@ -2,10 +2,13 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-10 lg:pb-24">
-      <h2 className="section__title">Get in Touch</h2>
+    <section
+      className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-10 lg:pb-24"
+      id="contact"
+    >
+      <h2 className="section__title mb-8 lg:mb-[3.75rem]">Get in Touch</h2>
       <div className="grid gap-x-4 grid-cols-1 lg:grid-cols-3">
-        <div>
+        <div className="lg:text-left text-center">
           <h3 className="text-indigo-500 text-xl font-bold mb-2">
             Let's talk about bla bla bla!
           </h3>

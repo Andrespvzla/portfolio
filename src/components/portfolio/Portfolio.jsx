@@ -4,55 +4,50 @@ import { IoLogoGithub, IoChevronForwardOutline } from "react-icons/io5";
 
 import Data from "./Data";
 
+const filters = [
+  { key: "all", label: "Everything" },
+  { key: "react", label: "React" },
+  { key: "tailwindcss", label: "TailwindCSS" },
+  { key: "ionic", label: "Ionic" },
+  { key: "wordpress", label: "WordPress" },
+];
+
 const Portfolio = () => {
   const [items, setItems] = useState(Data);
+  const [filter, setFilter] = useState("all");
+
   const filterItem = (categoryItem) => {
-    const updateItems = Data.filter((curElem) => {
-      return curElem.category === categoryItem;
-    });
-    setItems(updateItems);
+    setFilter(categoryItem);
+
+    if (categoryItem === "all") {
+      setItems(Data);
+    } else {
+      const updateItems = Data.filter((curElem) => {
+        return curElem.category === categoryItem;
+      });
+      setItems(updateItems);
+    }
   };
   return (
-    <section className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-8">
+    <section className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-8" id="portfolio">
       <h2 className="section__title">Projects I've done</h2>
       <div className="flex items-center flex-wrap gap-x-7 mb-10 lg:justify-start justify-center">
-        <span className="portfolio__filter-item" onClick={() => setItems(Data)}>
-          Everything
-        </span>
-        <span
-          className="portfolio__filter-item"
-          onClick={() => filterItem("react")}
-        >
-          React
-        </span>
-        <span
-          className="portfolio__filter-item"
-          onClick={() => filterItem("tailwindcss")}
-        >
-          TailwindCSS
-        </span>
-        <span
-          className="portfolio__filter-item"
-          onClick={() => filterItem("nodejs")}
-        >
-          NodeJS
-        </span>
-        <span
-          className="portfolio__filter-item"
-          onClick={() => filterItem("ionic")}
-        >
-          Ionic
-        </span>
-        <span
-          className="portfolio__filter-item"
-          onClick={() => filterItem("wordpress")}
-        >
-          WordPress
-        </span>
+        {filters.map((filterOne) => (
+          <span
+            key={filterOne.key}
+            className={
+              "portfolio__filter-item " +
+              (filter === filterOne.key ? "active" : "")
+            }
+            onClick={() => filterItem(filterOne.key)}
+          >
+            {filterOne.label}
+          </span>
+        ))}
       </div>
       <div className="grid gap-x-4 grid-cols-1 lg:grid-cols-3">
         {items.map((elem) => {
-          const { id, icon, name, demo, git, category } = elem;
+          const { id } = elem;
           return (
             <div className="my-8">
               <div

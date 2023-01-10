@@ -2,15 +2,10 @@ import React, { useState } from "react";
 
 import logo from "../../assets/logo.png";
 
-import {
-  IoHomeOutline,
-  IoPersonOutline,
-  IoBriefcaseOutline,
-  IoSchoolOutline,
-  IoChatbubblesOutline,
-  IoMenuSharp,
-  IoArrowBack,
-} from "react-icons/io5";
+import Menu from "./Menu";
+
+import { Link } from "react-scroll";
+import { IoMenuSharp, IoArrowBack } from "react-icons/io5";
 
 const Sidebar = () => {
   const [toggle, showMenu] = useState(false);
@@ -28,46 +23,19 @@ const Sidebar = () => {
         <nav className="p-10">
           <div>
             <ul className="flex flex-col gap-y-8">
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-500 hover:text-indigo-500 font-bold"
-                >
-                  <IoHomeOutline className="text-3xl scale__effect" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-500 hover:text-indigo-500 font-bold"
-                >
-                  <IoPersonOutline className="text-3xl scale__effect" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-500 hover:text-indigo-500 font-bold"
-                >
-                  <IoSchoolOutline className="text-3xl scale__effect" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-500 hover:text-indigo-500 font-bold"
-                >
-                  <IoBriefcaseOutline className="text-3xl scale__effect" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/"
-                  className="text-gray-500 hover:text-indigo-500 font-bold"
-                >
-                  <IoChatbubblesOutline className="text-3xl scale__effect" />
-                </a>
-              </li>
+              {Menu.map((menu) => (
+                <li>
+                  <Link
+                    to={menu.title}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    className="text-gray-500 hover:text-indigo-500 font-bold cursor-pointer"
+                  >
+                    <menu.icon className="text-3xl scale__effect" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </nav>

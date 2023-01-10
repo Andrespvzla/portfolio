@@ -26,9 +26,9 @@ const skills = [
 
 const About = () => {
   return (
-    <section className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-8">
+    <section className="max-w-5xl px-4 mx-auto my-0 pt-28 pb-8" id="about">
       <h2 className="section__title lg:pb-8 pb-none">About Me</h2>
-      <div className="grid gap-x-[1.875rem] grid-cols-1 lg:grid-cols-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3">
         <img
           src={Image}
           alt=""

@@ -23,7 +23,7 @@
   }
 
   .btn {
-    @apply scale__effect font-bold bg-indigo-500 text-white inline-block rounded-lg px-8 py-3 leading-none custom_shadow;
+    @apply scale__effect font-bold bg-indigo-500 text-white inline-block rounded-lg px-8 py-3 leading-none custom_shadow cursor-pointer;
   }
 
   .scale__effect {
@@ -35,7 +35,7 @@
   }
 
   .section__title {
-    @apply text-4xl ml-4 font-bold relative mb-[3.75rem] text-indigo-500;
+    @apply text-4xl lg:ml-4 font-bold relative mb-[3.75rem] text-indigo-500 text-center lg:text-left;
   }
 
   .skills__box-card {
@@ -47,7 +47,7 @@
   }
 
   .timeline__icon {
-    @apply absolute left-[-0.4375rem] top-0 text-2xl text-indigo-500 bg-white py-[0.4375rem] px-0;
+    @apply absolute left-[-0.4375rem] top-0 text-4xl text-indigo-500 bg-white py-[0.4375rem] px-0;
   }
 
   .input {
