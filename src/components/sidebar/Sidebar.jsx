@@ -18,7 +18,7 @@ export const Sidebar = () => {
   const [toggle, showMenu] = useState(false);
   return (
     <div>
-      <aside className={toggle ? 'aside left-0' : 'aside'}>
+      <aside className={toggle ? 'aside left-0 z-50' : 'aside'}>
         <a href="/">
           <img
             width={55}
