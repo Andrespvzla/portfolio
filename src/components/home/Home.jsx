@@ -24,7 +24,7 @@ export const Home = () => {
                             <IoLogoGithub />
                         </a>
                     </div>
-                    <a href="../../public/resume.pdf" target="_blank" className="btn">
+                    <a href="/resume.pdf" target="_blank" className="btn">
                         View Resume
                     </a>
                     <div className="absolute bottom-10 left-0 w-[100%] grid place-content-center">
