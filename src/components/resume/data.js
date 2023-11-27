@@ -5,10 +5,10 @@ const data = [
         id: 1,
         category: 'education',
         icon: IoSchoolOutline,
-        year: 'Dec 2022 - May 2023',
+        year: 'Dec 2022 - In Progress',
         title: 'Front-End Developer',
         company: 'Meta',
-        desc: ['• Completed my professional certificate as a Front-End developer with Meta'],
+        desc: ['In progress of getting this awesome certificate with Meta'],
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const data = [
         year: 'Sep 2013 - Mar 2020',
         title: 'Computer Engineer',
         company: 'Universidad Fermin Toro',
-        desc: ['• Graduated as a Computer Engineer in Venezuela and validated my degree in United States'],
+        desc: ['Graduated as a Computer Engineer in Venezuela and validated my degree in United States'],
     },
     {
         id: 3,
