@@ -16,6 +16,9 @@ import {
 
 export const Sidebar = () => {
   const [toggle, showMenu] = useState(false);
+
+  const date = new Date();
+
   return (
     <div>
       <aside className={toggle ? 'aside left-0 z-50' : 'aside'}>
@@ -84,28 +87,15 @@ export const Sidebar = () => {
           </div>
         </nav>
         <div className="p-10">
-          <span className="text-gray-500 text-md -rotate-180 vertical-rl">
-            &copy; 2022 - 2023.
-          </span>
+          <span className="text-gray-500 text-md -rotate-180 vertical-rl">&copy; 2022 - {date.getYear()}</span>
         </div>
       </aside>
-      <div
-        className={toggle ? 'navToggle left-[120px]' : 'navToggle'}
-        onClick={() => showMenu(!toggle)}
-      >
+      <div className={toggle ? 'navToggle left-[120px]' : 'navToggle'} onClick={() => showMenu(!toggle)}>
         <IoMenuSharp
-          className={
-            toggle
-              ? 'text-indigo-500 text-2xl hidden'
-              : 'text-indigo-500 text-2xl duration-1000'
-          }
+          className={toggle ? 'text-indigo-500 text-2xl hidden' : 'text-indigo-500 text-2xl duration-1000'}
         />
         <IoArrowBack
-          className={
-            toggle
-              ? 'text-indigo-500 text-2xl'
-              : 'text-indigo-500 text-2xl hidden duration-1000'
-          }
+          className={toggle ? 'text-indigo-500 text-2xl' : 'text-indigo-500 text-2xl hidden duration-1000'}
         />
       </div>
     </div>
