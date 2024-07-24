@@ -87,7 +87,7 @@ export const Sidebar = () => {
           </div>
         </nav>
         <div className="p-10">
-          <span className="text-gray-500 text-md -rotate-180 vertical-rl">&copy; 2022 - {date.getYear()}</span>
+          <span className="text-gray-500 text-md -rotate-180 vertical-rl">&copy; 2022 - {date.getFullYear()}</span>
         </div>
       </aside>
       <div className={toggle ? 'navToggle left-[120px]' : 'navToggle'} onClick={() => showMenu(!toggle)}>
